@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.astuetz.PagerSlidingTabStrip;
+
 
 public class menu2_Fragment extends Fragment {
 
@@ -27,6 +29,13 @@ public class menu2_Fragment extends Fragment {
 
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
         mViewPager.setAdapter(mCatPagerAdapter);
+        //
+
+        // Подключение библиотеки
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) rootView.findViewById(R.id.tabs);
+        tabs.setViewPager(mViewPager);
+        //tabs.setDividerColorResource(R.color.yellowColor);
+        //tabs.setDividerColor(R.color.yellowColor);
         //
         return rootView;
     }
